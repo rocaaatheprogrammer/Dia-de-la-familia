@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día de la Familia</title>
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <style>
+        /* =========================
+   PANTALLA DE INTRO
+==========================*/
+.intro{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("Familia\ Nexven.jpeg") center/cover no-repeat;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: desaparecer 2s ease forwards;
+    animation-delay: 5s;
+}
+
+/* CAPA OSCURA */
+.intro::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(2px);
+}
+
+/* TEXTO INTRO */
+.intro-texto{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.intro-texto h1{
+    font-size: 90px;
+    letter-spacing: 5px;
+    text-shadow: 0px 5px 20px rgba(0,0,0,0.5);
+}
+
+.intro-texto p{
+    font-size: 28px;
+    margin-top: 15px;
+    text-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+/* ANIMACION */
+@keyframes desaparecer{
+    0%{
+        opacity: 1;
+        visibility: visible;
+        filter: blur(0px);
+    }
+
+    70%{
+        opacity: 1;
+        filter: blur(8px);
+    }
+
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        filter: blur(20px);
+    }
+}
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #f3eadf;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #3b2f2f;
+        }
+
+        /* =========================
+           INDICE SUPERIOR
+        ==========================*/
+        .indice{
+            width: 100%;
+            background: #6a0dad;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+        }
+
+        /* LOGO */
+        .logo img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+            object-fit: cover;
+        }
+
+        /* TEXTOS */
+        .textos{
+            flex: 1;
+            margin-left: 40px;
+        }
+
+        .textos h1{
+            font-size: 55px;
+            margin-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .textos h2{
+            font-size: 40px;
+            margin-bottom: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .textos p{
+            font-size: 22px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* INSTAGRAM */
+        .instagram{
+            margin-left: 30px;
+        }
+
+        .instagram a{
+            color: white;
+            font-size: 45px;
+            transition: 0.3s;
+        }
+
+        .instagram a:hover{
+            color: #ffd6ff;
+            transform: scale(1.1);
+        }
+
+        /* =========================
+           SECCION HERO
+        ==========================*/
+        .hero{
+            position: relative;
+            width: 100%;
+            height: 650px;
+            overflow: hidden;
+
+            background: url("Familia Nexven.jpeg") center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-contenido{
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .hero-contenido h1{
+            font-size: 75px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+        }
+
+        .hero-contenido p{
+            font-size: 28px;
+            line-height: 1.5;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+        }
+
+        /* =========================
+           CONTENIDO
+        ==========================*/
+        .contenido{
+            padding: 80px 10%;
+        }
+
+        .bloque{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+            background: rgba(255,255,255,0.5);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .imagen{
+            flex: 1;
+        }
+
+        /* IMAGENES BRILLOSAS */
+        .imagen img{
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            filter: brightness(1.12);
+            transition: 0.4s;
+        }
+
+        .imagen img:hover{
+            transform: scale(1.03);
+        }
+
+        /* VIDEO PRINCIPAL */
+        .video-principal video{
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.25);
+            filter: brightness(1.08);
+        }
+
+        /* TEXTOS */
+        .texto{
+            flex: 1.3;
+        }
+
+        .texto h2{
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: #5a189a;
+        }
+
+        .texto p{
+            font-size: 22px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* =========================
+           TITULO VIDEOS
+        ==========================*/
+        .titulo-videos{
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .titulo-videos h1{
+            font-size: 55px;
+            color: #6a0dad;
+        }
+
+        /* =========================
+           GALERIA VIDEOS
+        ==========================*/
+        .galeria-videos{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .video-card{
+            background: rgba(255,255,255,0.7);
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0px 5px 18px rgba(0,0,0,0.15);
+            transition: 0.4s;
+        }
+
+        .video-card:hover{
+            transform: translateY(-8px);
+        }
+
+        .video-card video{
+            width: 100%;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            filter: brightness(1.1);
+        }
+
+        .video-card h3{
+            color: #5a189a;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+
+        .video-card p{
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           COLLAGE DISPERSO
+        ==========================*/
+        .collage{
+            margin-top: 100px;
+        }
+
+        .collage h1{
+            text-align: center;
+            font-size: 55px;
+            color: #6a0dad;
+            margin-bottom: 70px;
+        }
+
+        .grid-collage{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .foto{
+            overflow: hidden;
+            border-radius: 25px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+            transition: 0.4s;
+        }
+
+        .foto:hover{
+            transform: scale(1.04) rotate(1deg);
+        }
+
+        .foto img{
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 20px;
+            filter: brightness(1.15);
+        }
+
+        /* EFECTO DISPERSO */
+        .foto:nth-child(1){
+            transform: rotate(-4deg);
+        }
+
+        .foto:nth-child(2){
+            transform: rotate(3deg);
+        }
+
+        .foto:nth-child(3){
+            transform: rotate(-2deg);
+        }
+
+        .foto:nth-child(4){
+            transform: rotate(4deg);
+        }
+
+        .foto:nth-child(5){
+            transform: rotate(-3deg);
+        }
+
+        .foto:nth-child(6){
+            transform: rotate(2deg);
+        }
+
+        /* =========================
+           MENCION HONORIFICA
+        ==========================*/
+        .mencion{
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        .mencion h1{
+            font-size: 60px;
+            color: #6a0dad;
+            margin-bottom: 50px;
+        }
+
+        .mencion-box{
+            background: rgba(255,255,255,0.65);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .mencion-box img{
+            width: 100%;
+            max-height: 700px;
+            object-fit: cover;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            filter: brightness(1.1);
+        }
+
+        .mencion-box p{
+            font-size: 24px;
+            line-height: 1.8;
+            color: #4b3b3b;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ==========================*/
+        @media(max-width: 768px){
+
+            .indice{
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .textos{
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .textos h1{
+                font-size: 40px;
+            }
+
+            .textos h2{
+                font-size: 28px;
+            }
+
+            .hero{
+                height: 500px;
+            }
+
+            .hero-contenido h1{
+                font-size: 45px;
+            }
+
+            .hero-contenido p{
+                font-size: 20px;
+            }
+
+            .bloque{
+                flex-direction: column;
+            }
+
+            .texto h2{
+                font-size: 30px;
+                text-align: center;
+            }
+
+            .texto p{
+                font-size: 19px;
+            }
+
+            .titulo-videos h1,
+            .collage h1,
+            .mencion h1{
+                font-size: 38px;
+            }
+
+            .grid-collage{
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- =========================
+     TRANSICION DE ENTRADA
+==========================-->
+
+<style>
+
+/* PANTALLA DE INTRO */
+.intro{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+
+    animation: desaparecer 2s ease forwards;
+    animation-delay: 5s;
+}
+
+/* IMAGEN INTRO */
+.intro img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95);
+}
+
+/* ANIMACION */
+@keyframes desaparecer{
+
+    0%{
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        filter: blur(20px);
+    }
+}
+
+</style>
+<!-- INTRO PANTALLA COMPLETA -->
+<div class="intro">
+
+    <div class="intro-texto">
+        
+        <img src="Img Intro.png" alt="Foton">
+    </div>
+
+</div>
+
+    <!-- INDICE -->
+    <div class="indice">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="LOGO.jpg" alt="Logo">
+        </div>
+
+        <!-- TITULOS -->
+        <div class="textos">
+            <h1>PROMO 2027</h1>
+            <h2>Día de la Familia</h2>
+            <p>Algunos recuerdos inolvidables</p>
+        </div>
+
+        <!-- INSTAGRAM -->
+        <div class="instagram">
+
+            <!-- CAMBIA EL LINK -->
+            <a href="https://www.instagram.com/nexven_/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <section class="hero">
+
+        <div class="hero-contenido">
+            <h1>Bienvenidos</h1>
+
+            <p>
+                Un día especial para compartir momentos únicos,
+                fortalecer la unión familiar y crear recuerdos
+                que quedarán para siempre.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- CONTENIDO -->
+    <section class="contenido">
+
+        <!-- BLOQUE 1 -->
+        <div class="bloque">
+
+            <div class="imagen">
+                <img src="Imagen1prom.jpeg" alt="Familia">
+            </div>
+
+            <div class="texto">
+                <h2>¿Qué es la familia?</h2>
+
+                <p>
+                    La familia representa el primer espacio de amor,
+                    apoyo y formación en la vida de cada persona.
+                    Es el lugar donde aprendemos valores, compartimos
+                    experiencias y construimos recuerdos que permanecen
+                    para siempre.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- BLOQUE 2 -->
+        <div class="bloque">
+
+            <div class="imagen video-principal">
+
+                <video controls>
+                    <source src="videito.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div class="texto">
+
+                <h2>NEXVEN 27: Unidos como una familia</h2>
+
+                <p>
+                    Cada momento compartido dentro de nuestra promoción
+                    ha fortalecido los lazos de amistad, confianza y unión.
+                    Más que compañeros, somos una familia que permanecerá
+                    unida a través de los recuerdos y experiencias vividas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MEJORES MOMENTOS -->
+    <section class="contenido">
+
+        <div class="titulo-videos">
+            <h1>MEJORES MOMENTOS 10 DE MAYO ❤️</h1>
+        </div>
+
+        <div class="galeria-videos">
+
+            <!-- VIDEO 1 -->
+            <div class="video-card">
+
+                <video controls>
+                    <source src="Mamis bailand.mp4" type="video/mp4">
+                </video>
+
+                <h3>Madres con energía</h3>
+
+                <p>
+                   Las mamis nos incentivaron a bailar en ronda.
+                </p>
+
+            </div>
+
+            <!-- VIDEO 2 -->
+            <div class="video-card">
+
+                <video controls>
+                    <source src="jugando con ninos.mp4" type="video/mp4">
+                </video>
+
+                <h3>Jugando a los cubitos</h3>
+
+                <p>
+                    Jugamos el juego de ordenar números con niños de primaria.
+                </p>
+
+            </div>
+
+            <!-- VIDEO 3 -->
+            <div class="video-card">
+
+                <video controls>
+                    <source src="Josue pierde.mp4" type="video/mp4">
+                </video>
+
+                <h3>Nos gana un niño</h3>
+
+                <p>
+                    Un niño de primaria le gana a Josue en el juego.
+                </p>
+
+            </div>
+
+            <!-- VIDEO 4 -->
+            <div class="video-card">
+
+                <video controls>
+                    <source src="Bolas pegajosas.mp4" type="video/mp4">
+                </video>
+
+                <h3>Bolas pegajosas</h3>
+
+                <p>
+                    Jugando a pegar las bolas a un yurek.
+                </p>
+
+            </div>
+
+            <!-- VIDEO 5 -->
+            <div class="video-card">
+
+                <video controls>
+                    <source src="Memoria.mp4" type="video/mp4">
+                </video>
+
+                <h3>Juego de la memoria</h3>
+
+                <p>
+                    Dudoso juego de memoria con el profe Marvin 😂
+                </p>
+
+            </div>
+
+            <!-- VIDEO 6 -->
+            <div class="video-card">
+
+                <video controls>
+                    <source src="Desempate.mp4" type="video/mp4">
+                </video>
+
+                <h3>Desempate en los cubitos</h3>
+
+                <p>
+                    Humillacion a niños en el juego de los 
+                    cubitos. La edad es solo un numero.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COLLAGE -->
+    <section class="contenido collage">
+
+        <h1>Collage de recuerdos </h1>
+
+        <div class="grid-collage">
+
+            <div class="foto">
+                <img src="C1.jpeg" alt="">
+            </div>
+
+            <div class="foto">
+                <img src="C2.jpeg" alt="">
+            </div>
+
+            <div class="foto">
+                <img src="C3.jpeg" alt="">
+            </div>
+
+            <div class="foto">
+                <img src="Imagen1prom.jpeg" alt="">
+            </div>
+
+            <div class="foto">
+                <img src="LOGO.jpg" alt="">
+            </div>
+
+            <div class="foto">
+                <img src="Familia Nexven.jpeg" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MENCION HONORIFICA -->
+    <section class="contenido mencion">
+
+        <h1>Mención Honorífica</h1>
+
+        <div class="mencion-box">
+
+            <!-- CAMBIA LA IMAGEN -->
+            <img src="The Boys.png" alt="Mención Honorífica">
+
+            <!-- ESCRIBE TU MENSAJE -->
+            <p>
+                <b>Los mas macho alfa, pecho peludos de todo el colegio
+                en una sola foto. 
+                NEXVEN 27.</b>
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer> <b> PD: No gane nada en la rifa y creo que en el curso nadie tambien, mejoren su rifa los de promo porfa.
+    </b></footer>
+
+</body>
+</html>
